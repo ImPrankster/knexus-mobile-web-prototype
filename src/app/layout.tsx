@@ -1,6 +1,6 @@
-import "~/styles/globals.css";
-
 import { Inter } from "next/font/google";
+
+import "~/styles/globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+      </head>
+      <body
+        className={`font-sans ${inter.variable} flex min-h-screen flex-col`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
